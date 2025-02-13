@@ -4,10 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>С Днем Святого Валентина!</title>
-  <!-- Подключаем красивый шрифт Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    /* Сброс и базовые стили */
     * {
       margin: 0;
       padding: 0;
@@ -15,13 +13,12 @@
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f9f6f2; /* мягкий пастельный фон */
+      background-color: #f9f6f2;
       color: #333;
       line-height: 1.6;
       scroll-behavior: smooth;
     }
     
-    /* Верхний баннер с заголовком и предисловием */
     .header-banner {
       position: relative;
       height: 400px;
@@ -32,7 +29,7 @@
       justify-content: center;
       text-align: center;
       margin-bottom: 40px;
-      padding: 0 20px; /* небольшие поля, чтобы текст не прилипал к краям */
+      padding: 0 20px; 
     }
     .banner-title {
       font-size: 28px;
@@ -46,8 +43,6 @@
       max-width: 600px;
       margin: 0 auto;
     }
-    
-    /* Анимация появления при скролле */
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
@@ -58,7 +53,6 @@
       transform: translateY(0);
     }
     
-    /* Контейнер для фото и подписей */
     .photo-container {
       width: 90%;
       max-width: 900px;
@@ -73,13 +67,11 @@
       gap: 20px;
       padding: 10px;
     }
-    /* Чередование: в четных рядах меняем порядок элементов */
     .photo-row:nth-child(even) {
       flex-direction: row-reverse;
     }
-    /* Блок с фотографией */
     .photo {
-      flex: 0 0 300px; /* фиксированная ширина фото */
+      flex: 0 0 300px; 
       border: 2px solid #ddd;
       border-radius: 8px;
       overflow: hidden;
@@ -89,7 +81,6 @@
       height: auto;
       display: block;
     }
-    /* Блок с подписью */
     .caption {
       flex: 1;
       font-size: 18px;
@@ -97,9 +88,8 @@
       text-align: left;
     }
     
-    /* Нижняя секция с вопросом и кнопками */
     .valentine-section {
-      background-color: #fff0f5; /* нежный пастельный оттенок */
+      background-color: #fff0f5;
       padding: 40px 20px;
       text-align: center;
       margin-top: 40px;
@@ -134,19 +124,16 @@
     #noButton {
       background-color: #add8e6;
     }
-    /* При клике на кнопку "нет(...": она постепенно уменьшается */
     #noButton.shrink {
       width: 0;
       transform: scale(0);
       opacity: 0;
     }
-    /* Кнопка "ДА!" растёт и занимает всё место */
     #yesButton.grow {
       width: 100%;
       transform: scale(1.1);
     }
-    
-    /* Стили для конфет (confetti) */
+  
     .confetti {
       position: fixed;
       top: -50px;
@@ -167,8 +154,6 @@
         opacity: 0;
       }
     }
-    
-    /* Адаптивность для смартфонов: сохраняем горизонтальный (ряд) макет */
     @media (max-width: 600px) {
       .header-banner {
         height: 400px;
@@ -215,64 +200,56 @@
   </style>
 </head>
 <body>
-  <!-- Верхний баннер с заголовком и предисловием -->
   <div class="header-banner">
     <h2 class="banner-title">Special For My Love</h2>
     <p class="banner-preface">
-       Изначально я не планировал делать сайт, но немного подумав понял, что это было бы очень необычно. Я вложил в него много сил, но к сожалениию моих навыков Web программирования оказалось нелдостаточно, чтобы реализовать все идеи и задумки, ведь я хотел. Но тем не менее я долго над ним корпел переделывая несколько раз, меняя полностью дизайн и даже разок начал с самого начала, ведь конечный результат мне не понравился. А теперь наслаждайся.
+       Изначально я не планировал делать сайт, но немного подумав понял, что это было бы очень необычно. Я вложил в него много сил, но к сожалениию моих навыков Web программирования оказалось нелдостаточно, чтобы реализовать все идеи и задумки, которые я хотел. Но тем не менее я долго над ним корпел переделывая несколько раз, меняя полностью дизайн и даже разок начал с самого начала, ведь конечный результат мне не понравился. А теперь наслаждайся.
     </p>
   </div>
-  
-  <!-- Основной контент с фото и подписями -->
   <div class="photo-container">
-    <!-- Ряд 1 -->
     <div class="photo-row fade-in">
       <div class="photo">
         <img src="photo1.jpg" alt="Фото 1">
       </div>
       <div class="caption">
-        <p>Подпись к Фото 1. Здесь можно написать что-нибудь милое и личное.</p>
+        <p>Я не особо люблю фотаться, но делая этот сайт понял, что у нас критически не хватает фотографий. Так что с этого момента обещаю фотаться с тобой почаще.</p>
       </div>
     </div>
-    <!-- Ряд 2 -->
     <div class="photo-row fade-in">
       <div class="photo">
         <img src="photo2.jpg" alt="Фото 2">
       </div>
       <div class="caption">
-        <p>Подпись к Фото 2. Ещё одно тёплое воспоминание о наших моментах.</p>
+        <p>Мы с тобой вместе уже чуть больше года, но вспоминая все наши с тобой моменты вместе, не могу вообразить сколько еще всего нас будет ждать впереди.</p>
       </div>
     </div>
-    <!-- Ряд 3 -->
     <div class="photo-row fade-in">
       <div class="photo">
         <img src="photo3.jpg" alt="Фото 3">
       </div>
       <div class="caption">
-        <p>Подпись к Фото 3. Каждое фото – маленькая история нашей любви.</p>
+        <p>Может наша история звучит как нельзя банальна - "познакомила общая подруга", но для меня за этой история скрывается целое море самых разнообразныъ чувств и 
+        моций.</p>
       </div>
     </div>
-    <!-- Ряд 4 -->
     <div class="photo-row fade-in">
       <div class="photo">
         <img src="photo4.jpg" alt="Фото 4">
       </div>
       <div class="caption">
-        <p>Подпись к Фото 4. Ты – источник вдохновения для меня.</p>
+        <p>В самые плохие дни, думая о том, что рядом со мной есть такой замечательный, добрый, отзывчивый, небоящийся идти против течения человек как ты, то для меня и море станорвитсья просто лужей.</p>
       </div>
     </div>
-    <!-- Ряд 5 -->
     <div class="photo-row fade-in">
       <div class="photo">
         <img src="photo5.jpg" alt="Фото 5">
       </div>
       <div class="caption">
-        <p>Подпись к Фото 5. Вместе мы создаём самые красивые моменты.</p>
+        <p>Я не знаю, чтио нас будет ждать завтра, через месяц, через года, но я знаю точно, что во чтобы то ни стало, я потрачу все силы, чтобы остаться рядом с тобой, и помогать, о чем бы ты только не попрорсила.</p>
       </div>
     </div>
   </div>
 
-  <!-- Секция с вопросом и кнопками -->
   <div class="valentine-section fade-in">
     <p class="valentine-message">Do You Want To be my Valentine?</p>
     <div class="button-container">
@@ -281,9 +258,8 @@
     </div>
   </div>
 
-  <!-- Скрипты -->
   <script>
-    // Анимация появления элементов при скролле с помощью IntersectionObserver
+
     document.addEventListener('DOMContentLoaded', function() {
       const faders = document.querySelectorAll('.fade-in');
       const options = {
@@ -303,35 +279,27 @@
       });
     });
 
-    // Функция для создания конфет (confetti)
     function createConfetti() {
       const confetti = document.createElement('div');
       confetti.classList.add('confetti');
-      // Устанавливаем случайное горизонтальное положение (от 0 до 100vw)
       confetti.style.left = Math.random() * 100 + 'vw';
-      // Опционально: задаём случайный цвет из палитры
       const colors = ['#FFB6C1', '#FF69B4', '#FFC0CB', '#FF1493', '#DB7093'];
       confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
       document.body.appendChild(confetti);
 
-      // Удаляем элемент после завершения анимации (через 4 секунды)
       setTimeout(() => {
         confetti.remove();
       }, 4000);
     }
 
-    // Обработчик для кнопки "нет(..."
     document.getElementById('noButton').addEventListener('click', function() {
       const noBtn = document.getElementById('noButton');
       const yesBtn = document.getElementById('yesButton');
-      // Добавляем классы для анимации: кнопка "нет" сжимается, а "ДА!" растёт
       noBtn.classList.add('shrink');
       yesBtn.classList.add('grow');
     });
 
-    // Обработчик для кнопки "ДА!"
     document.getElementById('yesButton').addEventListener('click', function() {
-      // Создаем серию конфет для эффекта
       for (let i = 0; i < 20; i++) {
         setTimeout(createConfetti, i * 100);
       }
