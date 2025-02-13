@@ -166,12 +166,47 @@
       }
     }
     
+    /* Адаптивность для смартфонов: сохраняем горизонтальный (ряд) макет */
     @media (max-width: 600px) {
+      .header-banner {
+        height: 150px;
+      }
+      .arc-text text {
+        font-size: 20px;
+      }
       .photo-container {
         width: 95%;
+        gap: 20px;
       }
+      /* Сохраняем горизонтальное расположение элементов в ряду */
       .photo-row {
-        flex-direction: column;
+        flex-direction: row;
+        text-align: left;
+      }
+      .photo-row:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+      /* Уменьшаем размеры фото и отводим им процентное пространство */
+      .photo {
+        flex: 0 0 45%;
+      }
+      .caption {
+        flex: 1 0 55%;
+        font-size: 16px;
+        padding: 10px;
+      }
+      .valentine-message {
+        font-size: 22px;
+      }
+      .button-container {
+        flex-direction: row;
+        gap: 15px;
+      }
+      .button-container button {
+        width: 45%;
+        margin: 0;
+        font-size: 18px;
+        padding: 10px;
       }
     }
   </style>
