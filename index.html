@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>С Днем Святого Валентина!</title>
+  <!-- Подключаем красивый шрифт Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Сброс и базовые стили */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f6f2; /* мягкий пастельный фон */
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Верхний блок с романтичным сообщением */
+    .header-banner {
+      position: relative;
+      height: 200px;
+      background: url('https://via.placeholder.com/500x200/FFC0CB/ffffff?text=Romantic+Background') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .arc-text {
+      width: 100%;
+      height: auto;
+    }
+    .arc-text text {
+      fill: #ffffff;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    /* Анимация появления при скролле */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Контейнер для фото и подписей */
+    .photo-container {
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .photo-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 10px;
+    }
+    /* Чередование: в четных рядах меняем порядок элементов */
+    .photo-row:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    /* Блок с фотографией */
+    .photo {
+      flex: 0 0 300px; /* фиксированная ширина фото */
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* Блок с подписью */
+    .caption {
+      flex: 1;
+      font-size: 18px;
+      color: #555;
+      text-align: left;
+    }
+
+    /* Нижняя секция с вопросом и кнопками */
+    .valentine-section {
+      background-color: #fff0f5; /* нежный пастельный оттенок */
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 40px;
+      transition: all 0.6s ease;
+    }
+    .valentine-message {
+      font-size: 28px;
+      font-weight: 600;
+      color: #a8327a;
+      margin-bottom: 30px;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      min-height: 100px;
+    }
+    .button-container button {
+      width: 45%;
+      padding: 15px;
+      font-size: 22px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: width 0.6s ease, transform 0.6s ease, opacity 0.6s ease;
+      font-weight: 600;
+    }
+    #yesButton {
+      background-color: #ffb6c1;
+    }
+    #noButton {
+      background-color: #add8e6;
+    }
+    /* При клике на кнопку "нет(...": она постепенно уменьшается */
+    #noButton.shrink {
+      width: 0;
+      transform: scale(0);
+      opacity: 0;
+    }
+    /* Кнопка "ДА!" растёт и занимает всё место */
+    #yesButton.grow {
+      width: 100%;
+      transform: scale(1.1);
+    }
+
+    /* Стили для конфет (confetti) */
+    .confetti {
+      position: fixed;
+      top: -50px;
+      z-index: 9999;
+      width: 20px;
+      height: 20px;
+      pointer-events: none;
+      opacity: 0.9;
+      animation: confettiFall 4s linear forwards;
+    }
+    @keyframes confettiFall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .photo-container {
+        width: 95%;
+      }
+      .photo-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Верхний романтичный блок с арочным текстом -->
+  <div class="header-banner">
+    <svg class="arc-text" viewBox="0 0 500 200" preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <!-- Путь в виде дуги: начало и конец дуги направлены вниз -->
+        <path id="arcPath" d="M50,150 A200,200 0 0,1 450,150"></path>
+      </defs>
+      <text dominant-baseline="middle" text-anchor="middle">
+        <textPath xlink:href="#arcPath" href="#arcPath" startOffset="50%">
+          Special for my love
+        </textPath>
+      </text>
+    </svg>
+  </div>
+
+  <!-- Основной контент с фото и подписями -->
+  <div class="photo-container">
+    <!-- Ряд 1 -->
+    <div class="photo-row fade-in">
+      <div class="photo">
+        <img src="photo1.jpg" alt="Фото 1">
+      </div>
+      <div class="caption">
+        <p>Подпись к Фото 1. Здесь можно написать что-нибудь милое и личное.</p>
+      </div>
+    </div>
+    <!-- Ряд 2 -->
+    <div class="photo-row fade-in">
+      <div class="photo">
+        <img src="photo2.jpg" alt="Фото 2">
+      </div>
+      <div class="caption">
+        <p>Подпись к Фото 2. Ещё одно тёплое воспоминание о наших моментах.</p>
+      </div>
+    </div>
+    <!-- Ряд 3 -->
+    <div class="photo-row fade-in">
+      <div class="photo">
+        <img src="photo3.jpg" alt="Фото 3">
+      </div>
+      <div class="caption">
+        <p>Подпись к Фото 3. Каждое фото – маленькая история нашей любви.</p>
+      </div>
+    </div>
+    <!-- Ряд 4 -->
+    <div class="photo-row fade-in">
+      <div class="photo">
+        <img src="photo4.jpg" alt="Фото 4">
+      </div>
+      <div class="caption">
+        <p>Подпись к Фото 4. Ты – источник вдохновения для меня.</p>
+      </div>
+    </div>
+    <!-- Ряд 5 -->
+    <div class="photo-row fade-in">
+      <div class="photo">
+        <img src="photo5.jpg" alt="Фото 5">
+      </div>
+      <div class="caption">
+        <p>Подпись к Фото 5. Вместе мы создаём самые красивые моменты.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Секция с вопросом и кнопками -->
+  <div class="valentine-section fade-in">
+    <p class="valentine-message">Do You Want To be my Valentine?</p>
+    <div class="button-container">
+      <button id="yesButton">ДА!</button>
+      <button id="noButton">нет(...</button>
+    </div>
+  </div>
+
+  <!-- Скрипты -->
+  <script>
+    // Анимация появления элементов при скролле с помощью IntersectionObserver
+    document.addEventListener('DOMContentLoaded', function() {
+      const faders = document.querySelectorAll('.fade-in');
+      const options = {
+        threshold: 0.2
+      };
+      const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, options);
+
+      faders.forEach(el => {
+        appearOnScroll.observe(el);
+      });
+    });
+
+    // Функция для создания конфет (confetti)
+    function createConfetti() {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      // Устанавливаем случайное горизонтальное положение (от 0 до 100vw)
+      confetti.style.left = Math.random() * 100 + 'vw';
+      // Опционально: задаём случайный цвет из палитры
+      const colors = ['#FFB6C1', '#FF69B4', '#FFC0CB', '#FF1493', '#DB7093'];
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.appendChild(confetti);
+
+      // Удаляем элемент после завершения анимации (через 4 секунды)
+      setTimeout(() => {
+        confetti.remove();
+      }, 4000);
+    }
+
+    // Обработчик для кнопки "нет(..."
+    document.getElementById('noButton').addEventListener('click', function() {
+      const noBtn = document.getElementById('noButton');
+      const yesBtn = document.getElementById('yesButton');
+      // Добавляем классы для анимации: кнопка "нет" сжимается, а "ДА!" растёт
+      noBtn.classList.add('shrink');
+      yesBtn.classList.add('grow');
+    });
+
+    // Обработчик для кнопки "ДА!"
+    document.getElementById('yesButton').addEventListener('click', function() {
+      // Создаем серию конфет для эффекта
+      for (let i = 0; i < 20; i++) {
+        setTimeout(createConfetti, i * 100);
+      }
+    });
+  </script>
+</body>
+</html>
