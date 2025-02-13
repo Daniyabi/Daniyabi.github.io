@@ -20,10 +20,6 @@
       line-height: 1.6;
       scroll-behavior: smooth;
     }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
     
     /* Верхний блок с романтичным сообщением */
     .header-banner {
@@ -178,7 +174,6 @@
         width: 95%;
         gap: 20px;
       }
-      /* Сохраняем горизонтальное расположение элементов в ряду */
       .photo-row {
         flex-direction: row;
         text-align: left;
@@ -186,7 +181,6 @@
       .photo-row:nth-child(even) {
         flex-direction: row-reverse;
       }
-      /* Уменьшаем размеры фото и отводим им процентное пространство */
       .photo {
         flex: 0 0 45%;
       }
@@ -214,13 +208,18 @@
 <body>
   <!-- Верхний романтичный блок с арочным текстом -->
   <div class="header-banner">
-    <svg class="arc-text" viewBox="0 0 500 200" preserveAspectRatio="xMidYMid meet" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg class="arc-text" 
+         viewBox="0 0 500 200" 
+         preserveAspectRatio="xMidYMid meet"
+         xmlns:xlink="http://www.w3.org/1999/xlink">
       <defs>
-        <!-- Путь в виде дуги: начало и конец дуги направлены вниз -->
-        <path id="arcPath" d="M50,150 A200,200 0 0,1 450,150"></path>
+        <!-- Путь: дуга ближе к верхней части -->
+        <!-- Радиус и координаты можно подстраивать под нужный результат -->
+        <path id="arcPath" d="M50,70 A200,200 0 0,1 450,70"></path>
       </defs>
       <text dominant-baseline="middle" text-anchor="middle">
-        <textPath xlink:href="#arcPath" href="#arcPath" startOffset="50%">
+        <!-- Смещаем текст чуть вверх/вниз при необходимости -->
+        <textPath xlink:href="#arcPath" startOffset="50%" dy="-5">
           Special for my love
         </textPath>
       </text>
